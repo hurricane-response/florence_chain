@@ -3,7 +3,8 @@
     <ul class = "list-group">
       <li class = "list-group-item">
         <span style = "float: left;">Add Peer</span>
-        <input type = "text" class = "form-control" id = "peer" placeholder="Insert URL of Peer Here"> 
+        <input style = "float: left;" type = "text" class = "form-control" id = "peer" placeholder="Insert URL of Peer Here"> 
+        <button class = "btn btn-primary" id = "add-peer" style = "float:right;">Add Peer</button>
       </li>
     </ul>
   </div>
@@ -141,4 +142,19 @@
       + "&lat=" + lat
       + "&lng=" + lng );
   }
+
+  document.getElementById('add-peer').addEventListener('click',function(){
+    var xhttp = new XMLHttpRequest();
+    var peer_url = document.getElementById('peer').value;
+     xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        alert(this.responseText);
+      }
+    }
+    xhttp.open("POST", "?r=/join-peer", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send(
+      "peer=" + peer_url 
+    );
+  });
 </script>
