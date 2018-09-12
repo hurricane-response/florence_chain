@@ -1,4 +1,13 @@
 <div class = "container" style="margin-top: 50px;">
+  <div class = "row">
+    <ul class = "list-group">
+      <li class = "list-group-item">
+        <span style = "float: left;">Add Peer</span>
+        <input type = "text" class = "form-control" id = "peer" placeholder="Insert URL of Peer Here"> 
+      </li>
+    </ul>
+  </div>
+  <br>
   <div class = "card">
     <div class = "container" style = "padding: 10px;">
       <div class = "row">
