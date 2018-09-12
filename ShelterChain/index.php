@@ -53,6 +53,8 @@ $node->route('/join-peer', function($data = []) use ($node){
 			$response = curl_exec($ch);
 			curl_close($ch);
 		}
+		file_put_contents("peers.json", $peer_data);
+		echo "Peer Added.";
 	}
 });
 
